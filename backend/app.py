@@ -22,7 +22,7 @@ from routes.reports import reports_bp
 from routes.queries import queries_bp
 
 app = Flask(__name__)
-CORS(app, supports_credentials=True, origins=['http://localhost:3000', 'http://127.0.0.1:3000'])
+CORS(app, supports_credentials=True, origins=['http://localhost:3000', 'http://127.0.0.1:3000', 'https://biometric-hr-management-portal.vercel.app'])
 
 app.register_blueprint(auth_bp)
 app.register_blueprint(employees_bp)
