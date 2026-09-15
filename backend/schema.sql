@@ -1,7 +1,4 @@
--- Create database
-CREATE DATABASE IF NOT EXISTS payroll_db;
-USE payroll_db;
-
+-- Database handled externally
 -- Users table (login)
 CREATE TABLE IF NOT EXISTS users (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
