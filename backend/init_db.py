@@ -8,14 +8,10 @@ def get_base_dir():
 
 def connect_to_mysql(with_db=False):
     """Establish a MySQL connection, with optional database selection."""
-    kwargs = {
-        'host': '127.0.0.1',
-        'user': 'root',
-        'port': 3307,
-        'connect_timeout': 10
-    }
-    if with_db:
-        kwargs['database'] = 'payroll_db'
+    from config import DB_CONFIG
+    kwargs = DB_CONFIG.copy()
+    if not with_db and 'database' in kwargs:
+        del kwargs['database']
     return mysql.connector.connect(**kwargs)
 
 def database_exists():
